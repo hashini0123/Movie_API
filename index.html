@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Information - OMDB API</title>
+    <link rel="stylesheet" href="asserts/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="search-section">
+            <h1><img src="asserts/logo.png" alt="logo" width="25px" height="25px"> &nbsp; Movie Search</h1>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Enter movie title or IMDb ID (e.g., Inception, tt3896198)">
+                <button onclick="searchMovie()">Search</button>
+            </div>
+
+            <div class="hero-banner">
+                <img src="asserts/main_img.webp" alt="Siskel & Ebert 50th Anniversary">
+            </div>
+
+            <div class="second-banner">
+                <img src="asserts/film_4.webp" alt="The Secret Agent">
+                <div class="banner-text">
+                    <h3>The Secret Agent</h3>
+                    <p>Once in a while, you see a movie that doesn't feel made, but
+                        extracted from a dreaming mind. It has a strong personality
+                        and visual style and moves to its own mysterious rhythms.
+                        It won't go to you and hand over its meanings. You have to
+                        go to it. That's "The Secret Agent," written and directed
+                        by Kleber Mendonça Filho ("Aquarius," "Bacarau"). 
+                        Set in 1977 Brazil, roughly at the midpoint of
+                        a 21-year military dictatorship, "The Secret Agent"
+                        is a drama, a satire, an intriguingly laid-back espionage
+                        film, and a recreation of a time and place, with
+                        expressionistic and surreal flourishes that must be
+                        accepted on their own terms. Wagner Moura stars as Marcelo,
+                        a tall, bearded fellow with gentle energy and sad eyes. He
+                        arrives in Recife, the state capital of Pernambuco, Brazil, in a
+                        bright yellow Volkswagen Beetle. We don't know why he's come to Recife.
+                        We won't know for a long time. You have to pick up on subtext in order
+                        to understand certain conversations. Marcelo and the other
+                        characters in his orbit try to avoid saying exactly what they
+                        mean, because someone might be listening.</p>
+                </div>
+            </div>
+
+            <h2 style="text-align: center; margin-top: 30px; color: #2d3748;">New Reviews</h2>
+
+            <div id="newReviewsGrid" class="new-reviews-grid-container">
+                </div>
+
+            <div id="error" class="error"></div>
+        </div>
+
+        <div id="loading" class="loading">Loading...</div>
+
+        <div id="movieContent"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
