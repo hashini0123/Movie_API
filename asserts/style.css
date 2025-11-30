@@ -1,4 +1,3 @@
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +16,6 @@ body {
     margin: 0 auto;
 }
 
-/* Search Section Styles */
 .search-section {
     background: white;
     padding: 30px;
@@ -38,7 +36,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* Input Styles */
 input[type="text"] {
     flex: 1;
     padding: 15px;
@@ -53,7 +50,6 @@ input[type="text"]:focus {
     border-color: #667eea;
 }
 
-/* Button Styles */
 button {
     padding: 15px 30px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -76,7 +72,6 @@ button:active {
     transform: translateY(0);
 }
 
-/* Hero Banner Section */
 .hero-banner {
     width: 100%;
     margin-bottom: 30px;
@@ -105,7 +100,6 @@ button:active {
     }
 }
 
-/* Second Banner Grid Layout - 50% 50% with Hover Effect */
 .second-banner {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -168,7 +162,6 @@ button:active {
     }
 }
 
-/* --- New Reviews Grid Styles (අලුතින් එකතු කරන ලද) --- */
 .new-reviews-grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
@@ -194,7 +187,7 @@ button:active {
 
 .new-review-card img {
     width: 100%;
-    height: 120px; /* රූපවල පළලට ගැලපෙන උස */
+    height: 120px; 
     object-fit: cover; 
     display: block;
 }
@@ -205,10 +198,7 @@ button:active {
     color: #2d3748;
     font-weight: 600;
 }
-/* --- New Reviews Grid Styles End --- */
 
-
-/* Movie Card Styles (Search Result Display) */
 .movie-card {
     background: white;
     border-radius: 15px;
@@ -237,7 +227,6 @@ button:active {
     padding: 30px 30px 30px 0;
 }
 
-/* Movie Title and Meta */
 .movie-title {
     font-size: 36px;
     font-weight: bold;
@@ -261,7 +250,6 @@ button:active {
     gap: 5px;
 }
 
-/* Rating Section */
 .rating-section {
     display: flex;
     gap: 20px;
@@ -291,7 +279,6 @@ button:active {
     color: #667eea;
 }
 
-/* Movie Plot */
 .movie-plot {
     line-height: 1.8;
     color: #4a5568;
@@ -300,7 +287,6 @@ button:active {
     text-align: justify;
 }
 
-/* Movie Details Grid */
 .movie-details {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -323,7 +309,6 @@ button:active {
     color: #4a5568;
 }
 
-/* Loading and Error States */
 .loading {
     text-align: center;
     padding: 40px;
@@ -343,7 +328,6 @@ button:active {
     font-weight: 500;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     body {
         padding: 10px;
@@ -369,7 +353,6 @@ button:active {
         max-height: 200px;
     }
 
-    /* Second Banner Mobile Layout */
     .second-banner {
         grid-template-columns: 1fr;
         gap: 15px;
@@ -388,13 +371,12 @@ button:active {
         font-size: 14px;
     }
 
-    /* New Review grid එක කුඩා තිර වලදී සකස් කිරීම */
     .new-reviews-grid-container {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 15px;
     }
     .new-review-card img {
-        height: 80px; /* කුඩා තිර සඳහා උස අඩු කිරීම */
+        height: 80px;
     }
 
     .movie-card {

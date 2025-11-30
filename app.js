@@ -23,43 +23,37 @@ const NEW_REVIEWS_DATA = [
         title: 'Teenage Wasteland (1996)' 
     },
     { 
-        id: 'tt13009664', // Stringer (උපකල්පිත ID)
+        id: 'tt13009664', 
         poster: 'stringerre-672x281.jpg', 
         title: 'Stringer' 
     },
     { 
-        id: 'tt19005952', // Zootopia 2025 (උපකල්පිත ID)
+        id: 'tt19005952', 
         poster: 'Zootopia-2025-1-jpg.webp', 
         title: 'Zootopia 2' 
     },
     { 
-        id: 'tt20084518', // Wake Up Dead Man (උපකල්පිත ID)
+        id: 'tt20084518', 
         poster: 'wake-up-dead-man-2025-672x281.jpg', 
         title: 'Wake Up Dead Man (2025)' 
     },
     { 
-        id: 'tt28014498', // Thing with Feathers (උපකල්පිත ID)
+        id: 'tt28014498', 
         poster: 'thingwithfeathersre-672x281.jpg', 
         title: 'Thing with Feathers' 
     },
     { 
-        id: 'tt27389145', // Black News (උපකල්පිත ID)
+        id: 'tt27389145', 
         poster: 'blknwsre-672x281.jpg', 
         title: 'Black News' 
     }
 ];
-// ----------------------------------------------------
 
-
-// ----------------------------------------------------
-// ආරම්භක ශ්‍රිත සහ Event Listeners
-// ----------------------------------------------------
 window.onload = function() {
-    // 1. නව විචාර Poster images පෙන්වීම
+    
     renderNewReviews();
     
-    // 2. පිටුව load වූ විට එක් චිත්‍රපටයක විස්තර පෙන්වීම
-    fetchMovie('tt3896198'); // මුල් Load එක සඳහා Guardians of the Galaxy ID එක භාවිතා කරයි
+    fetchMovie('tt3896198'); 
 };
 
 document.getElementById('searchInput').addEventListener('keypress', function(e) {
@@ -68,16 +62,11 @@ document.getElementById('searchInput').addEventListener('keypress', function(e) 
     }
 });
 
-// ----------------------------------------------------
-// A. නව විචාර Poster Images පෙන්වීමට Logic
-// ----------------------------------------------------
-
 function renderNewReviews() {
     const gridContainer = document.getElementById('newReviewsGrid');
     let htmlContent = '';
 
     NEW_REVIEWS_DATA.forEach(movie => {
-        // data-imdb-id attribute එක තුළට IMDb ID එක සඟවයි (Controller data)
         htmlContent += `
             <div class="new-review-card" data-imdb-id="${movie.id}">
                 <img src="${movie.poster}" alt="${movie.title} Poster" onerror="this.src='https://via.placeholder.com/672x281?text=Image+Missing'">
@@ -88,32 +77,21 @@ function renderNewReviews() {
 
     gridContainer.innerHTML = htmlContent;
 
-    // Poster container එකට click event listener එක සවි කිරීම
     gridContainer.addEventListener('click', handleReviewClick);
 }
 
-// ----------------------------------------------------
-// B. Poster එකක් ක්ලික් කළ විට විස්තර ලබා ගැනීමට Logic
-// ----------------------------------------------------
-
 function handleReviewClick(event) {
-    // ක්ලික් කළේ new-review-card එකක්දැයි සොයා බලයි
     const clickedCard = event.target.closest('.new-review-card');
 
     if (clickedCard) {
         const imdbID = clickedCard.getAttribute('data-imdb-id');
         
         if (imdbID) {
-            // Search Input එක හිස් කර විස්තරය fetch කරයි
             document.getElementById('searchInput').value = ''; 
             fetchMovie(imdbID); 
         }
     }
 }
-
-// ----------------------------------------------------
-// C. පවතින searchMovie() සහ fetchMovie() ශ්‍රිත
-// ----------------------------------------------------
 
 function searchMovie() {
     const searchValue = document.getElementById('searchInput').value.trim();
@@ -136,7 +114,6 @@ function fetchMovie(query) {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    // query හි tt තිබේදැයි බලා i=ID හෝ t=Title යැවීම
     const param = query.startsWith('tt') ? `i=${query}` : `t=${encodeURIComponent(query)}`;
     const apiUrl = `${API_URL}?${param}&apikey=${API_KEY}`;
 
@@ -166,10 +143,6 @@ function fetchMovie(query) {
             console.error('Error:', error);
         });
 }
-
-// ----------------------------------------------------
-// D. පවතින displayMovie() ශ්‍රිත
-// ----------------------------------------------------
 
 function displayMovie(movie) {
     const content = document.getElementById('movieContent');
