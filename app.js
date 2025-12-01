@@ -169,9 +169,9 @@ function displayMovie(movie) {
             <div class="info-section">
                 <h2 class="movie-title">${movie.Title}</h2>
                 <div class="movie-meta">
-                    <span>📅 ${movie.Year}</span>
-                    <span>⏱️ ${movie.Runtime}</span>
-                    <span>🎭 ${movie.Rated}</span>
+                    <span> ${movie.Year}</span>
+                    <span> ${movie.Runtime}</span>
+                    <span> ${movie.Rated}</span>
                 </div>
 
                 <div class="rating-section">
